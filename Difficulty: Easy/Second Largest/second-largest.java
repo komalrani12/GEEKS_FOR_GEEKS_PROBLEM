@@ -28,18 +28,29 @@ public class Main {
 
 class Solution {
     public int getSecondLargest(int[] arr) {
-       int largest=-1;
-       int secondlargest=-1;
-       for(int i=0;i<arr.length; i++){
-           if(arr[i]>largest){
-               largest=arr[i];
-           }
-       }
-       for(int i=0; i<arr.length; i++){
-           if(arr[i]>secondlargest && arr[i]!=largest){
-               secondlargest=arr[i];
-           }
-       }
-       return secondlargest;
+        /// Java program to find the second largest element in the arra
+        int n = arr.length;
+
+        int largest = -1, secondLargest = -1;
+
+        // finding the second largest element
+        for (int i = 0; i < n; i++) {
+
+            // If arr[i] > largest, update second largest with
+            // largest and largest with arr[i]
+            if(arr[i] > largest) {
+                secondLargest = largest;
+                largest = arr[i];
+            }
+          
+            // If arr[i] < largest and arr[i] > second largest, 
+            // update second largest with arr[i]
+            else if(arr[i] < largest && arr[i] > secondLargest) {
+                secondLargest = arr[i];
+            }
+        }
+        return secondLargest;
     }
 }
+
+   
