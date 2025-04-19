@@ -24,33 +24,20 @@ public class Main {
 // } Driver Code Ends
 
 
-// User function Template for Java
-
 class Solution {
     public int getSecondLargest(int[] arr) {
-        /// Java program to find the second largest element in the arra
-        int n = arr.length;
-
-        int largest = -1, secondLargest = -1;
-
-        // finding the second largest element
-        for (int i = 0; i < n; i++) {
-
-            // If arr[i] > largest, update second largest with
-            // largest and largest with arr[i]
-            if(arr[i] > largest) {
-                secondLargest = largest;
-                largest = arr[i];
-            }
-          
-            // If arr[i] < largest and arr[i] > second largest, 
-            // update second largest with arr[i]
-            else if(arr[i] < largest && arr[i] > secondLargest) {
-                secondLargest = arr[i];
+        int n=arr.length;
+        int largest=arr[0];
+        int slargest=-1;
+        for(int i=0; i<n;i++){
+            if(arr[i]>largest){
+                slargest=largest;
+                largest=arr[i];
+            }else if(arr[i]<largest && arr[i]>slargest){
+                slargest=arr[i];
             }
         }
-        return secondLargest;
+        return slargest;
+        
     }
 }
-
-   
